@@ -2,6 +2,8 @@ package org.jointheleague.discord_bot_example;
 
 import org.javacord.api.DiscordApi; 
 import org.javacord.api.DiscordApiBuilder;
+import org.jointheleague.modules.SmokeMessageListener;
+import org.jointheleague.modules.VomitMessageListener;
 
 public class Bot  {
 
@@ -20,15 +22,8 @@ public class Bot  {
 		api.getServerTextChannelsByName(channelName).forEach(e -> e.sendMessage("Bot Connected"));
 		
 		//add Listeners
-		api.addMessageCreateListener(new RandomNumber(channelName));
-		api.addMessageCreateListener(new DadJokes(channelName));
-		api.addMessageCreateListener(new ClockMessageListener(channelName));
-		api.addMessageCreateListener(new CalculatorMessageListener(channelName));
-		api.addMessageCreateListener(new ComicMessageListener(channelName));
-		api.addMessageCreateListener(new ElmoMessageListener(channelName));
-		api.addMessageCreateListener(new FactMessageListener(channelName));
-		api.addMessageCreateListener(new Weather(channelName));
-		api.addMessageCreateListener(new FashionAdvisor(channelName));
+		api.addMessageCreateListener(new VomitMessageListener(channelName));
+		api.addMessageCreateListener(new SmokeMessageListener(channelName));
 	}
 
 }
