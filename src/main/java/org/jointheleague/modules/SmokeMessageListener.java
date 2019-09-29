@@ -12,19 +12,24 @@ public class SmokeMessageListener extends CustomMessageCreateListener {
 
 	@Override
 	public void handle(MessageCreateEvent event) throws APIException {
-		boolean smoke = false;
-		String[] smokingChars = new String[] {"smok", "🚬", "cigar"};
-		
-		for (String s : smokingChars) {
-			if (event.getMessageContent().contains(s)) {
-				smoke = true;
-				break;
+		if (!event.getMessageAuthor().isYourself()) {
+			boolean smoke = false;
+			String[] smokingChars = new String[] { "smok", "🚬", "cigar" };
+
+			for (String s : smokingChars) {
+				if (event.getMessageContent().contains(s)) {
+					smoke = true;
+					break;
+				}
 			}
-		}
-		
-		if (smoke) {
-			event.addReactionsToMessage("🚭");
-			event.getChannel().sendMessage("🤮🚭 **SMOKE DETECTOR ACTIVATED. WE WOULD LIKE TO REMIND YOU NOT TO SMOKE ON THIS DISCORD SERVER. THANK YOU.** 🤮🚭");
+
+			System.out.println(event.getMessageContent());
+			
+			if (smoke) {
+				event.addReactionsToMessage("🚭");
+				event.getChannel().sendMessage(
+						"\n🤮 🚭 **SMOKE DETECTOR ACTIVATED. WE WOULD LIKE TO REMIND YOU NOT TO SMOKE ON THIS DISCORD SERVER. THANK YOU.** 🚭");
+			}
 		}
 	}
 

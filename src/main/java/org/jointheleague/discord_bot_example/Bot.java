@@ -4,6 +4,7 @@ import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import org.jointheleague.modules.SmokeMessageListener;
 import org.jointheleague.modules.VomitMessageListener;
+import org.jointheleague.modules.WelcomeMessageListener;
 
 public class Bot  {
 
@@ -24,6 +25,7 @@ public class Bot  {
 		//add Listeners
 		api.addMessageCreateListener(new VomitMessageListener(channelName));
 		api.addMessageCreateListener(new SmokeMessageListener(channelName));
+		api.addMessageCreateListener(new WelcomeMessageListener());
 	}
 
 }

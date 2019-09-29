@@ -12,23 +12,12 @@ public class VomitMessageListener extends CustomMessageCreateListener {
 
 	@Override
 	public void handle(MessageCreateEvent event) throws APIException {
-		String message = event.getMessageContent();
-
 		if (!event.getMessageAuthor().isYourself()) {
-			String newMessage = message;
-
-			if (!message.startsWith("🤮")) {
-				newMessage = "🤮 " + newMessage;
-			}
-
-			if (!message.endsWith("🤮")) {
-				newMessage = newMessage + " 🤮";
-			}
+			String message = event.getMessageContent();
 			
-			newMessage.replaceAll("🤮", ":vomiting:");
-			
-			event.deleteMessage();
-			event.getChannel().sendMessage("*"+event.getMessageAuthor().getDisplayName()+"* "+newMessage);
+			if (!((message.startsWith("🤮") || (message.startsWith("<:vomiting"))))) {
+				event.getChannel().sendMessage("🤮 Hey, man, where the vomiting emojis at?");
+			}
 		}
 	}
 
