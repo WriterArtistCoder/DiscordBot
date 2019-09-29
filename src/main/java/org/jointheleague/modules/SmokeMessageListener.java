@@ -22,8 +22,6 @@ public class SmokeMessageListener extends CustomMessageCreateListener {
 					break;
 				}
 			}
-
-			System.out.println(event.getMessageContent());
 			
 			if (smoke) {
 				event.addReactionsToMessage("🚭");

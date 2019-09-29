@@ -12,7 +12,10 @@ public class VomitMessageListener extends CustomMessageCreateListener {
 
 	@Override
 	public void handle(MessageCreateEvent event) throws APIException {
-		if (!event.getMessageAuthor().isYourself()) {
+		System.out.println("Message: "+event.getMessageContent());
+		System.out.println("Author: "+event.getMessageAuthor()+"\n");
+		
+		if (!event.getMessageAuthor().isYourself() && !event.getMessageContent().isEmpty()) {
 			String message = event.getMessageContent();
 			
 			if (!((message.startsWith("🤮") || (message.startsWith("<:vomiting"))))) {

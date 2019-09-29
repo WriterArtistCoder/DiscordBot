@@ -2,9 +2,7 @@ package org.jointheleague.discord_bot_example;
 
 import org.javacord.api.DiscordApi; 
 import org.javacord.api.DiscordApiBuilder;
-import org.jointheleague.modules.SmokeMessageListener;
-import org.jointheleague.modules.VomitMessageListener;
-import org.jointheleague.modules.WelcomeMessageListener;
+import org.jointheleague.modules.*;
 
 public class Bot  {
 
@@ -25,7 +23,8 @@ public class Bot  {
 		//add Listeners
 		api.addMessageCreateListener(new VomitMessageListener(channelName));
 		api.addMessageCreateListener(new SmokeMessageListener(channelName));
-		api.addMessageCreateListener(new WelcomeMessageListener());
+		api.addMessageCreateListener(new MentionMessageListener(channelName));
+		api.addMessageCreateListener(new WelcomeMessageListener(channelName));
 	}
 
 }
