@@ -13,7 +13,8 @@ public class MentionMessageListener extends CustomMessageCreateListener {
 	@Override
 	public void handle(MessageCreateEvent event) throws APIException {
 		String message = event.getMessageContent();
-		if (message.contains("<@627193414319865899>") || message.contains("bot") || message.contains("Bot")) {
+		if (!event.getMessageAuthor().isYourself()
+				&& (message.contains("<@627193414319865899>") || message.contains("bot") || message.contains("Bot"))) {
 			event.getChannel().sendMessage("🤮 Hey guys! Are you talking about ME?");
 		}
 	}

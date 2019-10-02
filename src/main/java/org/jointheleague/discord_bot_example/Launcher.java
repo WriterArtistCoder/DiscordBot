@@ -20,7 +20,11 @@ public class Launcher {
 		Map<String, BotInfo> map = Utilities.loadBotsFromJson();
 		for (String name : args) {
 			BotInfo n = map.get(name);
-			new Bot(n.getToken(), n.getChannel()).connect();
+			String[] channels = n.getChannel().split(",");
+			
+			for (String c : channels) {
+				new Bot(n.getToken(), c).connect();
+			}
 		}
 	}
 }

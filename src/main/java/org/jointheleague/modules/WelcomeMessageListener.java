@@ -13,7 +13,7 @@ public class WelcomeMessageListener extends CustomMessageCreateListener {
 	@Override
 	public void handle(MessageCreateEvent event) throws APIException {
 		if (event.getMessageContent().isEmpty()) {
-			event.getChannel().sendMessage("🤮 Welcome to our server! See the #welcome channel for more.");
+			event.getChannel().sendMessage("🤮 Welcome to our server! See the <#627571253536096260> channel for more.");
 		}
 	}
 
