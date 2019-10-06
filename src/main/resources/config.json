@@ -1,7 +1,7 @@
  { 
     "default":   {
-       "channel": "",
-       "token": ""
+       "token": "",
+       "channel": "general,minecraft,😎🚑🌌🕊💬,test"
     }
 
 }

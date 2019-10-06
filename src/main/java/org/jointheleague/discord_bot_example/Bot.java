@@ -18,13 +18,14 @@ public class Bot  {
 	public void connect() {
 		api = new DiscordApiBuilder().setToken(token).login().join();
 		System.out.println("You can invite the bot by using the following url: " + api.createBotInvite());
-		api.getServerTextChannelsByName(channelName).forEach(e -> e.sendMessage("Bot Connected"));
 		
 		//add Listeners
 		api.addMessageCreateListener(new VomitMessageListener(channelName));
 		api.addMessageCreateListener(new SmokeMessageListener(channelName));
 		api.addMessageCreateListener(new MentionMessageListener(channelName));
 		api.addMessageCreateListener(new WelcomeMessageListener(channelName));
+		api.addMessageCreateListener(new BootMessageListener(channelName));
+		api.addMessageCreateListener(new ClearMessageListener(channelName));
 	}
 
 }
