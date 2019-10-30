@@ -15,11 +15,12 @@ public class Bot  {
 		this.channelName = channelName;
 	}
 
-	public void connect() {
+	public void connect(boolean printInvite) {
 		api = new DiscordApiBuilder().setToken(token).login().join();
-		System.out.println("You can invite the bot by using the following url: " + api.createBotInvite());
+		if (printInvite) {
+			System.out.println("You can invite the bot by using the following url: " + api.createBotInvite());
+		}
 		
-		//add Listeners
 		api.addMessageCreateListener(new VomitMessageListener(channelName));
 		api.addMessageCreateListener(new SmokeMessageListener(channelName));
 		api.addMessageCreateListener(new MentionMessageListener(channelName));

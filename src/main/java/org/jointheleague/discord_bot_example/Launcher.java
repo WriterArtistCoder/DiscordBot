@@ -22,8 +22,8 @@ public class Launcher {
 			BotInfo n = map.get(name);
 			String[] channels = n.getChannel().split(",");
 			
-			for (String c : channels) {
-				new Bot(n.getToken(), c).connect();
+			for (int i = 0; i < channels.length; i++) {
+				new Bot(n.getToken(), channels[i]).connect(i == 0);
 			}
 		}
 	}
