@@ -25,6 +25,10 @@ public abstract class CustomMessageCreateListener implements MessageCreateListen
 			}
 		});
 	}
+	
+	public boolean containsIgnoreCase(String stringToSearch, String keyword) {
+		return stringToSearch.toLowerCase().contains(keyword.toLowerCase());
+	}
 
 	public abstract void handle(MessageCreateEvent event) throws APIException;
 }
