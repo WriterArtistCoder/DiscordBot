@@ -1,6 +1,6 @@
  { 
     "default": {
-       "channel": "lobby,minecraft,elmo-and-rats,old-proverbs",
+       "channel": "lobby,minecraft,elmo-and-rats,old-proverbs,test",
        "token": ""
     }
 
