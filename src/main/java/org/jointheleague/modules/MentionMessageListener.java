@@ -15,7 +15,7 @@ public class MentionMessageListener extends CustomMessageCreateListener {
 		String message = event.getMessageContent();
 		if (!event.getMessageAuthor().isYourself()
 				&& (message.contains("<@627193414319865899>") || containsIgnoreCase(message, "Bot")) && !containsIgnoreCase(message, "sorry")) {
-			event.getChannel().sendMessage("🤮 Hey guys! Are you talking about ME?");
+			event.getChannel().sendMessage("<:vomiting_robot:642414033290657803> Hey guys! Are you talking about ME?");
 		}
 	}
 

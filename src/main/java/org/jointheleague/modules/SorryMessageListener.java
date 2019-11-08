@@ -15,8 +15,8 @@ public class SorryMessageListener extends CustomMessageCreateListener {
 		String message = event.getMessageContent();
 		if (!event.getMessageAuthor().isYourself() && (message.contains("<@627193414319865899>")
 				&& (message.contains("sorry") || containsIgnoreCase(message, "sorry")))) {
-			event.getChannel().sendMessage("🤮 No problem. Just, constant retching is an important thing to reinforce.");
-			event.getChannel().sendMessage("🤮 Sorry if I came off a little harsh.");
+			event.getChannel().sendMessage("<:vomiting_robot:642414033290657803> No problem. Just, constant retching is an important thing to reinforce.");
+			event.getChannel().sendMessage("<:vomiting_robot:642414033290657803> Sorry if I came off a little harsh.");
 		}
 	}
 

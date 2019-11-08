@@ -31,7 +31,7 @@ public class VomitMessageListener extends CustomMessageCreateListener {
 			}
 			
 			if (!startsWith) {
-				event.getChannel().sendMessage("🤮 Hey, man, where the vomiting emojis at?");
+				event.getChannel().sendMessage("<:vomiting_robot:642414033290657803> Hey, man, where the vomiting emojis at?");
 			}
 		}
 	}

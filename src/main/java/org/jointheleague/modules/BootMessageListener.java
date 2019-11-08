@@ -13,9 +13,9 @@ public class BootMessageListener extends CustomMessageCreateListener {
 	@Override
 	public void handle(MessageCreateEvent event) throws APIException {
 		if (event.getMessageContent().contains("ive me the boot")) {
-			event.getChannel().sendMessage("Are you sure you want it?\n.\n");
-			event.getChannel().sendMessage("You ➡ 😨   👢💨\n.\n");
-			event.getChannel().sendMessage("🤕 Sorry!");
+			event.getChannel().sendMessage("<:vomiting_robot:642414033290657803> Are you sure you want it?\n.\n");
+			event.getChannel().sendMessage("<:vomiting_robot:642414033290657803> You ➡ 😨   👢💨\n.\n");
+			event.getChannel().sendMessage("<:vomiting_robot:642414033290657803> 🤕 Sorry!");
 		}
 	}
 

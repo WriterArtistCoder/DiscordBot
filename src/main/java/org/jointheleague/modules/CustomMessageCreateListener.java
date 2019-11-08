@@ -19,7 +19,6 @@ public abstract class CustomMessageCreateListener implements MessageCreateListen
 				try {
 					handle(event);
 				} catch (APIException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}

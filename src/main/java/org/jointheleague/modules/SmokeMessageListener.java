@@ -26,7 +26,7 @@ public class SmokeMessageListener extends CustomMessageCreateListener {
 			if (smoke) {
 				event.addReactionsToMessage("🚭");
 				event.getChannel().sendMessage(
-						"\n🤮 🚭 **SMOKE DETECTOR ACTIVATED. WE WOULD LIKE TO REMIND YOU NOT TO SMOKE ON THIS DISCORD SERVER. THANK YOU.** 🚭");
+						"\n<:vomiting_robot:642414033290657803> 🚭 **SMOKE DETECTOR ACTIVATED. WE WOULD LIKE TO REMIND YOU NOT TO SMOKE ON THIS DISCORD SERVER. THANK YOU.** 🚭");
 			}
 		}
 	}
