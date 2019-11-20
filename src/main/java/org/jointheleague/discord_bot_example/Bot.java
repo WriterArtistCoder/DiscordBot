@@ -28,6 +28,7 @@ public class Bot  {
 		api.addMessageCreateListener(new BootMessageListener(channelName));
 		api.addMessageCreateListener(new ClearMessageListener(channelName));
 		api.addMessageCreateListener(new SorryMessageListener(channelName));
+		api.addMessageCreateListener(new SwearMessageListener(channelName));
 	}
 }
 
