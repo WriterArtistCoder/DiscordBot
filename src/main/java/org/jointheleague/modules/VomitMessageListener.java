@@ -21,21 +21,19 @@ public class VomitMessageListener extends CustomMessageCreateListener {
 		if (runListener) {
 			System.out.println("Message: " + event.getMessageContent());
 			System.out.println("Author: " + event.getMessageAuthor());
-			System.out.println("Group message: " + event.isGroupMessage());
-			System.out.println("Server message: " + event.isServerMessage() + "\n");
 
 			if (!event.getMessageAuthor().isYourself() && !event.getMessageContent().isEmpty()) {
 				String message = event.getMessageContent();
 
-				boolean startsWith = false;
+				boolean vomit = false;
 				for (String p : prefixes) {
-					if (message.startsWith(p)) {
-						startsWith = true;
+					if (message.contains(p)) {
+						vomit = true;
 						break;
 					}
 				}
 
-				if (!startsWith) {
+				if (!vomit) {
 					event.getChannel().sendMessage(
 							"<:vomiting_robot:642414033290657803> Hey, man, where the vomiting emojis at?");
 				}

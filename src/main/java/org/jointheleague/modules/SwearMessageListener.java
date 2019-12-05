@@ -17,7 +17,7 @@ public class SwearMessageListener extends CustomMessageCreateListener {
 
 	static ArrayList<String> swearWords;
 	static ArrayList<ArrayList<String>> swearReplace;
-	
+
 	public SwearMessageListener(String channelName) {
 		super(channelName);
 		swearSetup();
@@ -30,7 +30,9 @@ public class SwearMessageListener extends CustomMessageCreateListener {
 		
 		for (int i = 0; i < swearWords.size(); i++) {
 			String word = swearWords.get(i);
-			if ((message.contains(" "+word) || message.contains(word+" ")) && !event.getMessageAuthor().isYourself()) {
+			boolean wordSpace = message.contains(" "+word) || message.contains(word+" ") ||
+					message.contains("||"+word) || message.equals(word);
+			if (wordSpace && !event.getMessageAuthor().isYourself()) {
 				containsSwear = true;
 				ArrayList<String> replace = swearReplace.get(i);
 				int rand = new Random().nextInt(replace.size());
@@ -44,24 +46,24 @@ public class SwearMessageListener extends CustomMessageCreateListener {
 			event.getChannel().sendMessage("```"+message+"```");
 		}
 	}
-	
+
 	public static void swearSetup() {
 		swearWords = new ArrayList<>();
 		swearReplace = new ArrayList<>();
-		
+
 		try {
 			Object obj = new JSONParser().parse(new FileReader(new File("src/main/resources/swear_replace.json")));
 			JSONArray json = (JSONArray) obj;
-			
+
 			for (int i = 0; i < json.size(); i++) {
 				JSONArray arr = (JSONArray) json.get(i);
 				swearWords.add((String) arr.get(0));
-				
+
 				ArrayList<String> addArr = new ArrayList<String>();
 				for (Object o : arr) {
 					addArr.add((String) o);
 				}
-				
+
 				addArr.remove(0); // Removes real swear word from replacement list
 				swearReplace.add(addArr);
 			}
