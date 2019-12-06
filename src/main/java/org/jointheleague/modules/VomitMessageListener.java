@@ -1,5 +1,7 @@
 package org.jointheleague.modules;
 
+import java.util.ArrayList;
+
 import org.javacord.api.event.message.MessageCreateEvent;
 
 import net.aksingh.owmjapis.api.APIException;
@@ -8,10 +10,15 @@ public class VomitMessageListener extends CustomMessageCreateListener {
 
 	boolean runListener = true;
 	String[] prefixes = { "🤮", "<:vomit" };
+	ArrayList<String> freeForAll;
 
 	public VomitMessageListener(String channelName) {
 		super(channelName);
-		if (channelName.equals("no-🤮")) {
+		freeForAll = new ArrayList<>();
+		freeForAll.add("memes");
+		freeForAll.add("requests");
+		freeForAll.add("no-🤮");
+		if (freeForAll.contains(channelName)) {
 			runListener = false;
 		}
 	}
