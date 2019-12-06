@@ -6,6 +6,7 @@ import org.jointheleague.modules.*;
 
 public class Bot  {
 
+	public static String emoji = "<:vomiting_robot:642414033290657803>";
 	private String token;
 	private String channelName;
 	DiscordApi api;
@@ -28,6 +29,7 @@ public class Bot  {
 		api.addMessageCreateListener(new ClearMessageListener(channelName));
 		api.addMessageCreateListener(new SorryMessageListener(channelName));
 		api.addMessageCreateListener(new SwearMessageListener(channelName));
+		api.addMessageCreateListener(new ImperialMessageListener(channelName));
 	}
 }
 

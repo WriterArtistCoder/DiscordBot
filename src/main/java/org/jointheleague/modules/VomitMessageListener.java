@@ -3,6 +3,7 @@ package org.jointheleague.modules;
 import java.util.ArrayList;
 
 import org.javacord.api.event.message.MessageCreateEvent;
+import org.jointheleague.discord_bot_example.Bot;
 
 import net.aksingh.owmjapis.api.APIException;
 
@@ -42,7 +43,7 @@ public class VomitMessageListener extends CustomMessageCreateListener {
 
 				if (!vomit) {
 					event.getChannel().sendMessage(
-							"<:vomiting_robot:642414033290657803> Hey, man, where the vomiting emojis at?");
+							Bot.emoji + " Hey, man, where the vomiting emojis at?");
 				}
 			}
 		}

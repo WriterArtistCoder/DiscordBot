@@ -1,6 +1,7 @@
 package org.jointheleague.modules;
 
 import org.javacord.api.event.message.MessageCreateEvent;
+import org.jointheleague.discord_bot_example.Bot;
 
 import net.aksingh.owmjapis.api.APIException;
 
@@ -26,7 +27,7 @@ public class SmokeMessageListener extends CustomMessageCreateListener {
 			if (smoke) {
 				event.addReactionsToMessage("🚭");
 				event.getChannel().sendMessage(
-						"\n<:vomiting_robot:642414033290657803> 🚭 **SMOKE DETECTOR ACTIVATED. WE WOULD LIKE TO REMIND YOU NOT TO SMOKE ON THIS DISCORD SERVER. THANK YOU.** 🚭");
+						"\n" + Bot.emoji + "🚭 **SMOKE DETECTOR ACTIVATED. WE WOULD LIKE TO REMIND YOU NOT TO SMOKE ON THIS DISCORD SERVER. THANK YOU.** 🚭");
 			}
 		}
 	}

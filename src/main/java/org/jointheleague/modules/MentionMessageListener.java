@@ -1,6 +1,7 @@
 package org.jointheleague.modules;
 
 import org.javacord.api.event.message.MessageCreateEvent;
+import org.jointheleague.discord_bot_example.Bot;
 
 import net.aksingh.owmjapis.api.APIException;
 
@@ -15,7 +16,7 @@ public class MentionMessageListener extends CustomMessageCreateListener {
 		String message = event.getMessageContent();
 		if (!event.getMessageAuthor().isYourself()
 				&& (message.contains("<@627193414319865899>") || containsIgnoreCase(message, "Bot")) && !containsIgnoreCase(message, "sorry")) {
-			event.getChannel().sendMessage("<:vomiting_robot:642414033290657803> Hey guys! Are you talking about ME?");
+			event.getChannel().sendMessage(Bot.emoji + " Hey guys! Are you talking about ME?");
 		}
 	}
 
