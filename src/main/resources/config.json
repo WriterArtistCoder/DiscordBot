@@ -1,7 +1,4 @@
- { 
-    "default": {
-       "channel": "lobby,gaming,awesome-links,private,sits,test,memes,requests,no-🤮",
-       "token": ""
-    }
-
+{
+	"channels": ["lobby", "gaming", "awesome-links", "private", "sits", "test", "memes", "requests", "no-🤮"],
+	"token": ""
 }

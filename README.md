@@ -1,22 +1,11 @@
 # DiscordBot
+This bot manages the 🤮🤮🤮🤮 [Discord](http://discordapp.com) channel run by `WriterArtistCoder#6032`.
 
-## importing project into eclipse
+## Import project into Eclipse
+1. Clone the project
+2. Import as existing Maven project
+3. Run `maven clean` and `maven install`
 
-clone the project
-
-import as existing maven project
-
-run maven clean and maven install
-
-
-## Running Program from command line:
-
-Open the terminal in your project folder and run one of the following commands:
-
-With default user:
-
+## Running program
+Open the command line in your project folder and run the following command:
 `mvn clean compile exec:java`
-
-With specific user:
-
-`mvn clean compile exec:java -Dexec.args="Keith"`
