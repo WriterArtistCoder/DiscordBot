@@ -5,6 +5,11 @@ import org.javacord.api.DiscordApiBuilder;
 
 import com.tinystripz.modules.*;
 
+/**
+ * Launches all of the listeners for one channel.
+ * @author keithgroves and https://tinystripz.com
+ *
+ */
 public class Bot {
 
 	// The string to show the custom :vomiting_robot: emoji
