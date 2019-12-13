@@ -10,13 +10,19 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+/**
+ * This class contains the `loadBotsfromJson()` method, which parses the JSON file
+ * and returns a BotInfo class.
+ * @author keithgroves and https://tinystripz.com
+ *
+ */
 public class Utilities {
 	private Utilities() {
 
 	}
 
 	/**
-	 * 
+	 * Parses the JSON file and returns a BotInfo class.
 	 * @return BotInfo
 	 */
 	public static BotInfo loadBotsFromJson() {
@@ -39,16 +45,7 @@ public class Utilities {
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}
-
-//		try (Reader reader = new InputStreamReader(
-//				Utilities.class.getClassLoader().getResourceAsStream("config.json"))) {
-//			System.out.println("Loading bots");
-//			Gson gson = new GsonBuilder().create();
-//			return gson.fromJson(reader, new TypeToken<Map<String, BotInfo>>(){}.getType());
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		System.err.println("Failed to load bots");
+		
 		return null;
 	}
 }

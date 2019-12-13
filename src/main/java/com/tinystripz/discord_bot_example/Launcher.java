@@ -2,7 +2,6 @@ package com.tinystripz.discord_bot_example;
 
 /**
  * Launches the bot.
- * 
  * @author keithgroves and https://tinystripz.com
  *
  */
