@@ -37,10 +37,6 @@ public class VomitMessageListener extends CustomMessageCreateListener {
 
 	@Override
 	public void handle(MessageCreateEvent event) throws APIException {
-		// Log the message and author
-		System.out.println("Message: " + event.getMessageContent());
-		System.out.println("Author: " + event.getMessageAuthor());
-
 		// If the listener should be run
 		if (runListener) {
 			// If the sender isn't the bot and the message isn't empty

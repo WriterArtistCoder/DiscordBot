@@ -13,7 +13,7 @@ import com.tinystripz.modules.*;
 public class Bot {
 
 	// The string to show the custom :vomiting_robot: emoji
-	public static String emoji = "<:vomiting_robot:642414033290657803>";
+	public static String emoji;
 
 	private String token;
 	private String channelName;
@@ -22,6 +22,8 @@ public class Bot {
 	public Bot(String token, String channelName) {
 		this.token = token;
 		this.channelName = channelName;
+		
+		emoji = "<:vomiting_robot:642414033290657803>";
 	}
 
 	public void connect(boolean printInvite) {
@@ -34,6 +36,7 @@ public class Bot {
 		}
 
 		// Load all the bots
+		api.addMessageCreateListener(new AllMessageListener(channelName));
 		api.addMessageCreateListener(new VomitMessageListener(channelName));
 		api.addMessageCreateListener(new SmokeMessageListener(channelName));
 		api.addMessageCreateListener(new MentionMessageListener(channelName));
@@ -42,5 +45,6 @@ public class Bot {
 		api.addMessageCreateListener(new SorryMessageListener(channelName));
 		api.addMessageCreateListener(new SwearMessageListener(channelName));
 		api.addMessageCreateListener(new ImperialMessageListener(channelName));
+		api.addMessageCreateListener(new NicknameMessageListener(channelName));
 	}
 }
