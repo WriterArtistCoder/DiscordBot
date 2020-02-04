@@ -20,12 +20,12 @@ public class NicknameMessageListener extends CustomMessageCreateListener {
 		super(channelName);
 
 		// A regex pattern for someone's nickname to change
-		trigger = Pattern.compile("ChangeNickname <@!(\\d+)> <(.+)>");
+		trigger = Pattern.compile("ChangeNickname <@(\\d+)> <(.+)>");
 	}
 
 	@Override
 	public void handle(MessageCreateEvent event) throws APIException {
-		String message = event.getMessageContent(); // Get the message
+		String message = event.getMessageContent(); // Get the message's content
 		matcher = trigger.matcher(message); // Search the message for the ChangeNickname command
 		
 		// Sets the server variable as the current server
@@ -39,7 +39,7 @@ public class NicknameMessageListener extends CustomMessageCreateListener {
 			String userId = matcher.group(1);
 			// The nickname the sender wants to change it to
 			String nick = matcher.group(2);
-			
+			System.out.println(matcher.group(1)+" "+matcher.group(2));
 			
 			try {
 				// Get the targeted user

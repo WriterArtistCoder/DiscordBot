@@ -37,9 +37,7 @@ public class SwearMessageListener extends CustomMessageCreateListener {
 
 		for (int i = 0; i < swearWords.size(); i++) {
 			String word = swearWords.get(i);
-			boolean wordSpace = message.contains(" " + word) || message.contains(word + " ")
-					|| message.contains("||" + word) || message.equals(word);
-			if (wordSpace && !event.getMessageAuthor().isYourself()) {
+			if (containsIgnoreCase(message, word) && !event.getMessageAuthor().isYourself()) {
 				containsSwear = true;
 				ArrayList<String> replace = swearReplace.get(i);
 				int rand = new Random().nextInt(replace.size());
