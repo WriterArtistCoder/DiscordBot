@@ -32,8 +32,13 @@ public class Bot {
 
 		// Load all the bots
 		api.addMessageCreateListener(new PrintMessageListener(channelName));
-		api.addMessageCreateListener(new ClearMessageListener(channelName));
+		api.addMessageCreateListener(new VomitMessageListener(channelName));
 		api.addMessageCreateListener(new SmokeMessageListener(channelName));
-		// api.addMessageCreateListener(new YourFirstListener(channelName));
+		api.addMessageCreateListener(new MentionMessageListener(channelName));
+		api.addMessageCreateListener(new BootMessageListener(channelName));
+		api.addMessageCreateListener(new ClearMessageListener(channelName));
+		api.addMessageCreateListener(new SorryMessageListener(channelName));
+		api.addMessageCreateListener(new ImperialMessageListener(channelName));
+		api.addMessageCreateListener(new NicknameMessageListener(channelName));
 	}
 }
