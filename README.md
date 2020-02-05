@@ -14,6 +14,10 @@ Open the command line in your project folder and run the following command:
 
 ## Project structure
 
+## Branches
+- `master` - A ready-to-go bot! Add more features if you'd like.
+- `vomit-server` - A modified version of my bot that I use for my 🤮-themed Discord server.
+
 ### Packages
 - `discord_api` - This package contains the basic Discord API handling stuff.
 - `modules` - This package contains the listeners.

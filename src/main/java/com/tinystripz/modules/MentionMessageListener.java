@@ -21,10 +21,11 @@ public class MentionMessageListener extends CustomMessageCreateListener {
 	@Override
 	public void handle(MessageCreateEvent event) throws APIException {
 		String message = event.getMessageContent();
+
 		// If the message contains "bot" or mentions the bot and the sender is not the bot
 		// and is not supposed to trigger SorryMessageListener
 		if (!event.getMessageAuthor().isYourself()
-				&& (message.contains("@627193414319865899") || containsIgnoreCase(message, "Bot"))
+				&& (message.contains(Bot.discordID))
 				&& !containsIgnoreCase(message, "sorry")) {
 			// Send this
 			event.getChannel().sendMessage(Bot.emoji + " Hey guys! Are you talking about ME?");

@@ -12,6 +12,7 @@ import com.tinystripz.modules.*;
  */
 public class Bot {
 
+	public static String discordID = "@627193414319865899"; // Watchbot's User ID.
 	public static String emoji = "<:vomiting_robot:642414033290657803>"; // The emoji Watchbot prefixes all its messages with
 	
 	private String token;
