@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.javacord.api.event.message.MessageCreateEvent;
 
-import com.tinystripz.discord_bot_example.Bot;
+import com.tinystripz.discord_api.Bot;
 
 import net.aksingh.owmjapis.api.APIException;
 
