@@ -19,8 +19,11 @@ public class ClearMessageListener extends CustomMessageCreateListener {
 
 	@Override
 	public void handle(MessageCreateEvent event) throws APIException {
+		String message = event.getMessageContent(); // Get the message
+
 		// If the message contains the keyword
-		if (containsIgnoreCase(event.getMessageContent(), "ClearChannel")) {
+		if (containsIgnoreCase(message, "ClearChannel")) {
+
 			// Clear the channel with repeated messages
 			event.getChannel().sendMessage(
 					".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n");
