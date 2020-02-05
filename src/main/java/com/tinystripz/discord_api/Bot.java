@@ -12,6 +12,8 @@ import com.tinystripz.modules.*;
  */
 public class Bot {
 
+	public static String discordID = "@627193414319865899"; // Watchbot's User ID
+
 	private String token;
 	private String channelName;
 	DiscordApi api;
@@ -34,6 +36,7 @@ public class Bot {
 		api.addMessageCreateListener(new PrintMessageListener(channelName));
 		api.addMessageCreateListener(new ClearMessageListener(channelName));
 		api.addMessageCreateListener(new SmokeMessageListener(channelName));
+		api.addMessageCreateListener(new MentionMessageListener(channelName));
 		// api.addMessageCreateListener(new YourFirstListener(channelName));
 	}
 }
