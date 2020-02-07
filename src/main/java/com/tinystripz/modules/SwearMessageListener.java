@@ -48,6 +48,9 @@ public class SwearMessageListener extends CustomMessageCreateListener {
 
 		// If the message contains a swear word
 		if (containsSwear) {
+			// Delete message
+			event.deleteMessage("Swearing");
+
 			// Send an censored version
 			event.getChannel().sendMessage("How about:");
 			event.getChannel().sendMessage("```" + message + "```");
