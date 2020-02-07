@@ -37,6 +37,8 @@ public class Bot {
 		api.addMessageCreateListener(new ClearMessageListener(channelName));
 		api.addMessageCreateListener(new SmokeMessageListener(channelName));
 		api.addMessageCreateListener(new MentionMessageListener(channelName));
+		api.addMessageCreateListener(new DeleteMessageListener(channelName));
+		api.addMessageCreateListener(new SwearMessageListener(channelName));
 		// api.addMessageCreateListener(new YourFirstListener(channelName));
 	}
 }
